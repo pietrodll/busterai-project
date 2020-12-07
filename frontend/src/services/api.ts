@@ -6,7 +6,7 @@ class Api {
   private api: AxiosInstance;
 
   constructor() {
-    this.baseUrl = `${process.env.REACT_APP_API_URL}/api`;
+    this.baseUrl = `${process.env.REACT_APP_API_URL || ''}/api`;
     this.api = axios.create({ baseURL: this.baseUrl });
   }
 

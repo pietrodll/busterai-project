@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts-compile": "node_modules/typescript/bin/tsc",
     "start": "nodemon",
-    "docker:dev": "docker-compose -f docker-compose.dev.yml up"
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up",
+    "docker:prod": "docker-compose -f docker-compose.prod.yml up --build"
   },
   "author": "pietrodll",
   "license": "MIT",

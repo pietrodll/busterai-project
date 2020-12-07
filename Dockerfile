@@ -24,10 +24,12 @@ RUN npm run ts-compile
 FROM node:12.16.1-alpine as build-front
 WORKDIR /usr/src/app
 
-COPY frontend/package.json frontend/yarn.lock frontend/.env.* frontend/tsconfig.json ./
+COPY frontend/package.json frontend/yarn.lock frontend/tsconfig.json ./
 RUN yarn install
 
-COPY frontend/public frontend/src ./
+COPY frontend/.env.* ./
+COPY frontend/public ./public
+COPY frontend/src ./src
 RUN yarn build
 
 

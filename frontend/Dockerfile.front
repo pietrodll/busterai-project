@@ -6,9 +6,9 @@ WORKDIR /usr/src/app
 # Dependencies
 ENV NODE_ENV development
 COPY package.json yarn.lock tsconfig.json ./
-COPY .env* ./
 RUN yarn install
 
+COPY .env* ./
 
 # ─── STAGE 2: BUILD ──────────────────────────────────────────────────────────────
 
