@@ -28,7 +28,11 @@ export const useLogin = (props: LoginComponentProps) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (newUser) {
-      props.onSignup(email, password);
+      if (password === confirmPassword) {
+        props.onSignup(email, password);
+      } else {
+        alert("The passwords don't match!");
+      }
     } else {
       props.onLogin(email, password);
     }

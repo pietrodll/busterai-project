@@ -2,7 +2,6 @@ import * as React from 'react';
 import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 
 import { ThemeProvider } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { PrivateRoute, LoginRoute } from '../components/auth';
@@ -31,9 +30,9 @@ export const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Box className={classes.appContainer}>
+        <div className={classes.appContainer}>
           <Header email={email} onLogout={handleLogout} />
-          <Box className={classes.pageContainer}>
+          <div className={classes.pageContainer}>
             <Switch>
               <LoginRoute
                 path="/login"
@@ -53,8 +52,8 @@ export const App: React.FC = () => {
               />
               <Redirect to="/home" />
             </Switch>
-          </Box>
-        </Box>
+          </div>
+        </div>
       </Router>
     </ThemeProvider>
   );
